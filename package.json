@@ -1,0 +1,17 @@
+{
+  "name": "cap6",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "parcel": "^2.0.0-beta.3.1"
+  },
+  "scripts": {
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html --dist-dir build --public-url /spa-pendientes",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.7"
+  }
+}
