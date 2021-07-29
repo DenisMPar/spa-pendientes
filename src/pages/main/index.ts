@@ -16,13 +16,14 @@ export function initPageMain(container) {
   </div>
   `;
 
-  //selecciona la lista contenedora de tasks y le agrega los task haciendo una iteracion de los task activos
+  //selecciona la ul, borra su contenido y agrega los task haciendo una iteracion de los task activos
   function createTask() {
     const activeTasks = state.getActiveTasks();
+    //ordena los task para que se muestren primero los incompletos
     const orderByCompleted = sort(activeTasks, ["completed"]);
-
     const ulEl = div.querySelector(".tasks__list");
     ulEl.innerHTML = "";
+
     for (const t of orderByCompleted) {
       const taskContainer = document.createElement("div");
       taskContainer.innerHTML = `
@@ -30,13 +31,14 @@ export function initPageMain(container) {
         t.id
       } ><task-el>
        `;
-
+      //Evento que escucha cuando la tarea se marca como completada
       taskContainer
         .querySelector("task-el")
         .addEventListener("completed", (e) => {
           const event = e as any;
           state.changeItemCompleted(event.detail);
         });
+      //evento que escucha cuando se borra una tarea
       taskContainer
         .querySelector("task-el")
         .addEventListener("deleted", (e) => {

@@ -51,9 +51,9 @@ customElements.define(
       width:21px;
       height:21px;
       justify-self: end;
+      margin:0;
     }
     .delete-button{
-      margin-top:12px;
       width:auto;
       height:22px;
       padding:0;
@@ -77,7 +77,7 @@ customElements.define(
       </button>
       </div>
       `;
-
+      //custom event que escucha cuando se activa el checkbox de completed
       const checkboxEl = this.shadow.querySelector(".input");
       checkboxEl.addEventListener("click", (e) => {
         const eventCompleted = new CustomEvent("completed", {
@@ -88,6 +88,7 @@ customElements.define(
         });
         this.dispatchEvent(eventCompleted);
       });
+      //custom event que escucha cuando se borra la tarea
       const buttonEl = this.shadow.querySelector(".delete-button");
       buttonEl.addEventListener("click", (e) => {
         const eventDeleted = new CustomEvent("deleted", {

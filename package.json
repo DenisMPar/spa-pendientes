@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "lodash": "^4.17.21",
     "parcel": "^2.0.0-beta.3.1"
   },

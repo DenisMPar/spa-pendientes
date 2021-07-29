@@ -31,6 +31,7 @@ const state = {
     }
     localStorage.setItem("state", JSON.stringify(newState));
   },
+  //cambia el estado "completado" de una tarea
   changeItemCompleted(params) {
     const currentState = this.getState();
     for (const i of currentState.tasks) {
@@ -40,6 +41,7 @@ const state = {
     }
     this.setState(currentState);
   },
+  //cambia el estado "borrado" de una tarea
   changeItemDeleted(params) {
     const currentState = this.getState();
     for (const i of currentState.tasks) {
@@ -54,7 +56,7 @@ const state = {
   },
 };
 (function () {
-  //sincroniza el state con el localstorage si es que existiera uno
+  //sincroniza el state.data con el local storage
   const localState = localStorage.getItem("state");
   if (localState) {
     state.data = JSON.parse(localState);
