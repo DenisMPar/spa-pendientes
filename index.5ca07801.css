@@ -1,0 +1,2 @@
+*{box-sizing:border-box}body{margin:0;font-family:roboto}.main__container{padding:0 31px;max-width:623px;margin:0 auto}@media (min-width:960px){.main__container{max-width:960px}}.main__title-container{margin-top:41px;margin-bottom:25px}.main__form-container{margin-bottom:46px}.tasks__list{padding:0;display:grid;gap:31px}@media (min-width:960px){.tasks__list{grid-template-columns:1fr 1fr 1fr;gap:12px;grid-auto-flow:row}}
+/*# sourceMappingURL=index.5ca07801.css.map */
